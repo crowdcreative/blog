@@ -3,9 +3,10 @@ Blog::Application.routes.draw do
 
   resources :users do
     resources :profiles
+    resources :articles
   end
 
-  resources :articles
+  
 
   
 

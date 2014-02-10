@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 	has_one :profile, :dependent => :destroy
-	has_many :articles
+	has_many :articles, :dependent => :destroy
 
-	accepts_nested_attributes_for :profile, :reject_if => lambda { |a| a[:facebook].blank?  } 
+	accepts_nested_attributes_for :profile
 end

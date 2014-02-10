@@ -2,18 +2,20 @@
 
 
   
-    <% @articles.each do |article| %>
+    <% @user.articles.each do |article| %>
       <p>
-        <h2><%= link_to article.title, article %> <small><%= article.published_at %></small></h2>
+        <h2><%= article.title %> <small><%= article.published_at %></small></h2>
         <span><%= article.body[0..300] %> ...</span>
 
-        <br>
-       
-        <span class="pull-right"><%= link_to 'Editar', edit_article_path(article) %></span>
-        <span class="pull-right"><%= link_to 'Excluir', article, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir o post?' } %></span>
-      </p>
+        <span><%= article.user.profile.name %></span>
+        <span><%= article.user.profile.location %></span>
+      </p> 
+	      
+	      <span class="pull-right"><%= link_to 'Editar', edit_user_article_path(@user, article) %></span>
+	      <span class="pull-right"><%= link_to 'Excluir', [@user, article], method: :delete, data: { confirm: 'Você tem certeza que deseja excluir o post?' } %></span>
+    
     <% end %>
 
 
 <br><br>
-<%= button_to 'Criar post', new_article_path, class: "btn btn-default", :method => :get %>
+<%= button_to 'Criar post', new_user_article_path, class: "btn btn-default", :method => :get %>
