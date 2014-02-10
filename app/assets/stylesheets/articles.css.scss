@@ -1,0 +1,29 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+	font-family: 'Alef', sans-serif !important;
+	color: #333332 !important;
+	font-size: 26px !important;
+	font-weight: bold !important;
+}
+
+span{
+	font-family: Alef, sans-serif !important;
+}
+
+h2{
+	font-family: 'Alef', sans-serif !important;
+	color: #333332 !important;
+	font-size: 21px !important;
+	font-weight: bold !important;
+}
+
+.container{
+	max-width: 640px !important;
+}
+
+a:hover{
+	text-decoration: none !important;
+};
