@@ -1,5 +1,6 @@
 Blog::Application.routes.draw do
   
+  match "/signup", to: "users#new", via: "get"
 
   resources :users do
     resources :profiles
@@ -10,7 +11,7 @@ Blog::Application.routes.draw do
 
   
 
-  root to: 'articles#index'
+  root to: 'homes#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

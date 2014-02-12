@@ -1,0 +1,13 @@
+
+  
+    <% @article.each do |article| %>
+      <p>
+         <h2><%= link_to article.title, user_article_path(article.user_id, article) %> <small><%= article.published_at %></small></h2>
+        <span><%= article.body[0..300] %> ...</span>
+        <%= link_to article.user.profile.name, user_path(article.user_id) %>
+      </p>
+    <% end %>
+
+
+    <%= button_to 'Criar post', new_user_article_path(@user), class: "btn btn-default", :method => :get %>
+
